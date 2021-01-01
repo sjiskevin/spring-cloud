@@ -1,0 +1,17 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: spring-cloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:8080/eureka
+
+zuul:
+  routes:
+    product-server: /product-server/**
+      retryable: false
+  retryable: false
